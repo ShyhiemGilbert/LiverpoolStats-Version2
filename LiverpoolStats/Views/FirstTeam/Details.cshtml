@@ -1,0 +1,82 @@
+﻿@model LiverpoolStats.Models.LiverpoolFirstTeamStatsTbl
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LiverpoolFirstTeamStatsTbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.playerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.playerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.playerPosition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.playerPosition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.playerAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.playerAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.playerApps)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.playerApps)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.playerGoals)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.playerGoals)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.playerYellowCards)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.playerYellowCards)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.playerRedCards)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.playerRedCards)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.playerImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.playerImg)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.playerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

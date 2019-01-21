@@ -9,19 +9,32 @@
 
 namespace LiverpoolStats.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class LiverpoolFirstTeamStatsTbl
-    {
-        public int playerId { get; set; }
-        public string playerName { get; set; }
-        public string playerPosition { get; set; }
-        public Nullable<int> playerAge { get; set; }
-        public Nullable<int> playerApps { get; set; }
-        public Nullable<int> playerGoals { get; set; }
-        public Nullable<int> playerYellowCards { get; set; }
-        public Nullable<int> playerRedCards { get; set; }
-        public string playerImg { get; set; }
-    }
+	using System;
+	using System.Collections.Generic;
+	using System.ComponentModel.DataAnnotations;
+
+	public partial class LiverpoolFirstTeamStatsTbl
+	{
+		public int playerId { get; set; }
+		
+		[Display(Name = "Name")]
+		[Required]
+		[StringLength(100, MinimumLength = 4)]
+		public string playerName { get; set; }
+
+		[Display(Name = "Position")]
+		public string playerPosition { get; set; }
+		[Display(Name = "Age")]
+		public Nullable<int> playerAge { get; set; }
+		[Display(Name = "Apps")]
+		public Nullable<int> playerApps { get; set; }
+		[Display(Name = "Goals")]
+		public Nullable<int> playerGoals { get; set; }
+		[Display(Name = "Yellow Cards")]
+		public Nullable<int> playerYellowCards { get; set; }
+		[Display(Name = "Red Cards")]
+		public Nullable<int> playerRedCards { get; set; }
+		[Display(Name = "Img")]
+		public string playerImg { get; set; }
+	}
 }
