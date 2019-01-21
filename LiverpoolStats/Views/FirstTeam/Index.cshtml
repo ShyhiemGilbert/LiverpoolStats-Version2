@@ -5,9 +5,11 @@
 }
 
 <h2>First Team Stats</h2>
+
 @using (Html.BeginForm())
 {
     <p>
+        Position: @Html.DropDownList("positionOptions", "All")
         Name: @Html.TextBox("SearchString")
         <input type="submit" value="Filter" />
     </p>

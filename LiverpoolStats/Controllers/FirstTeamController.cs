@@ -15,11 +15,27 @@ namespace LiverpoolStats.Controllers
         private readonly LiverpoolDbEntities db = new LiverpoolDbEntities();
 
         // GET: FirstTeam
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string searchString, string positionOptions)
         {
+			//Creating the position selection list for dropdown list
+			List<string> positionList = new List<string> ();
+			var positionQuery = from p in db.LiverpoolFirstTeamStatsTbls
+								orderby p.playerPosition
+								select p.playerPosition;
+			positionList.AddRange(positionQuery.Distinct());
+			ViewBag.positionOptions = new SelectList(positionList);
+			//Getting all players from db
 			var players = from p in db.LiverpoolFirstTeamStatsTbls
 						  select p;
 
+			//Filter by position
+			if (!String.IsNullOrEmpty(positionOptions))
+			{
+				players = players.Where(x => x.playerPosition == positionOptions);
+			}
+
+
+			//Searching by title
 			if (!String.IsNullOrEmpty(searchString))
 			{
 				players = players.Where(x => x.playerName.Contains(searchString));
