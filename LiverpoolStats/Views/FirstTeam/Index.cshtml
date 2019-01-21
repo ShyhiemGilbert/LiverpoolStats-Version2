@@ -71,7 +71,8 @@
             @Html.DisplayFor(modelItem => item.playerRedCards)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.playerImg)
+            @*@Html.DisplayFor(modelItem => item.playerImg)*@
+            <img src="@Url.Content(item.playerImg)" height="100"/>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.playerId }) |
